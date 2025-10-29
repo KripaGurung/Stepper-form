@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="main-container">
+
+        <h2>Create Your Account</h2>
+
+        <div class="step">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+        </div>
+
+        <form id="register">
+            <div class="form-stepOne">
+                <h3>Account Information</h3>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirm" placeholder="Confirm Password" required>
+                <button type="button" class="next">Next</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
