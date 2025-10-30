@@ -90,6 +90,7 @@ form .form-step label {
 form .form-step input[type=text],
 form .form-step input[type=email],
 form .form-step input[type=password],
+form .form-step input[type=tel],
 form .form-step select {
   width: 100%;
   padding: 0.6rem;
@@ -101,6 +102,7 @@ form .form-step select {
 form .form-step input[type=text]:focus,
 form .form-step input[type=email]:focus,
 form .form-step input[type=password]:focus,
+form .form-step input[type=tel]:focus,
 form .form-step select:focus {
   border-color: #2e7d32;
 }

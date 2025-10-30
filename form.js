@@ -169,18 +169,28 @@ function validateStep(stepIndex) {
     }
 
     if (stepIndex === 1) {
-        const username = document.getElementById("username").value.trim();
-        const country = document.getElementById("country").value.trim();
-        if (!username || !country) {
-            alert("Please fill all required fields in Personal Details.");
-            return false;
-        }
+    const username = document.getElementById("username").value.trim();
+    const country = document.getElementById("country").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    
+    const pattern = /^[0-9]{10}$/; // exactly 10 digits
+
+    if (!username || !country) {
+        alert("Please fill all required fields in Personal Details.");
+        return false;
     }
+
+    if (!pattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+    }
+}
+
 
     if (stepIndex === 2) {
         const interests = document.querySelectorAll('input[name="interests"]:checked');
-        if (interests.length === 0) {
-            alert("Please select at least three interest.");
+        if (interests.length < 3) {
+            alert("Please select at least three interests.");
             return false;
         }
     }
