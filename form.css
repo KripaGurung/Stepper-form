@@ -1,35 +1,132 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: #e3fde7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .main-container {
-    max-width: 1200px;
-    width: 100%;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    min-height: 700px;
+  background: #ffffff;
+  width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.main-container h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
 }
 
-h2 {    
-    text-align: center;
-    margin: 20px;
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  height: 3px;
+  background: #a5d6a7;
+  z-index: 0;
+}
+.steps .step {
+  background: #a5d6a7;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.steps .step.active, .steps .step.start {
+  background: #2e7d32;
 }
 
-.step {
-    display: flex;
-    justify-content: center;
+form .form-step {
+  display: none;
 }
+form .form-step.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+form .form-step h3 {
+  text-align: center;
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
+form .form-step label {
+  display: block;
+  margin-top: 0.8rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+form .form-step input,
+form .form-step select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+form .form-step input:focus,
+form .form-step select:focus {
+  border-color: #2e7d32;
+}
+form .form-step .interests-options {
+  margin-top: 1rem;
+}
+form .form-step .interests-options .interest-option {
+  margin-bottom: 0.5rem;
+}
+form .form-step .interests-options .interest-option label {
+  margin-left: 0.4rem;
+}
+form .form-step .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+form .form-step .buttons button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+form .form-step .buttons button:hover {
+  background: #1b5e20;
+}
+form .form-step .buttons button.prev {
+  background: #81c784;
+}
+form .form-step .buttons button.prev:hover {
+  background: #66bb6a;
+}
+form .form-step .terms-link {
+  color: #2e7d32;
+  text-decoration: none;
+}
+form .form-step .terms-link:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=form.css.map */

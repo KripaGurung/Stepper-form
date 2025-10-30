@@ -5,28 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stepper Form</title>
     <link rel="stylesheet" href="form.css">
+    <script src="form.js" defer></script>
 </head>
 <body>
     <div class="main-container">
-
-        <h2>Create Your Account</h2>
-
-        <div class="step">
-                <div class="step active">1</div>
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            
+            <div class="steps">
+                <div class="step start">1</div>
                 <div class="step">2</div>
                 <div class="step">3</div>
-        </div>
-
-        <form id="register">
-            <div class="form-stepOne">
-                <h3>Account Information</h3>
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <input type="password" id="confirm" placeholder="Confirm Password" required>
-                <button type="button" class="next">Next</button>
+                <div class="step">4</div>
             </div>
-        </form>
+            
+            <form id="register-form">
+                
+                <div class="form-step active">
+
+                    <h3>Account Information</h3>
+                    
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter Your Name" required>
+                
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter Your Password" required>
+    
+                    <div class="buttons">
+                        <button type="button" class="next">Next</button>
+                    </div>
+
+
+                </div>
+
+                <div class="form-step">
+
+                    <h3>Personal Details</h3>
+
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter Phone Number">
+                
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" placeholder="Enter Country" required>
+                
+                    <div class="buttons">
+                        <button type="button" class="prev">Previous</button>
+                        <button type="button" class="next">Next</button>
+                    </div>
+
+                </div>
+
+                <div class="form-step">
+
+                    <h3>Preferences</h3>
+
+                    <label>Select your interests:</label>
+                    <div class="interests-options">
+
+                        <div class="interest-option">
+                            <input type="checkbox" id="web-app" name="interests" value="Web App">
+                            <label for="web-app">Web App</label>
+                        </div>
+
+                        <div class="interest-option">
+                            <input type="checkbox" id="mobile-app" name="interests" value="Mobile App">
+                            <label for="mobile-app">Mobile App</label>
+                        </div>
+
+                        <div class="interest-option">
+                            <input type="checkbox" id="ui-ux" name="interests" value="UI/UX">
+                            <label for="ui-ux">UI/UX</label>
+                        </div>
+
+                        <div class="interest-option">
+                            <input type="checkbox" id="ai-ml" name="interests" value="AI/ML">
+                            <label for="ai-ml">AI/ML</label>
+                        </div>
+
+                        <div class="interest-option">
+                            <input type="checkbox" id="data-science" name="interests" value="Data Science">
+                            <label for="data-science">Data Science</label>
+                        </div>
+
+                    </div>
+
+                        <label for="skill">Skill Level:</label>
+                        <select id="skill">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+
+                        <div class="buttons">
+                            <button type="button" class="prev">Previous</button>
+                            <button type="button" class="next">Next</button>
+                        </div>
+
+                </div>
+
+                <div class="form-step">
+
+                    <h3>Confirm & Submit</h3>
+
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the</label>
+                    <a href="#" class="terms-link">terms and conditions</a>
+                    
+                    <div class="buttons">
+                        <button type="button" class="prev">Previous</button>
+                        <button type="submit">Create Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #e3fde7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    background: #ffffff;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        text-align: center;
+        color: #2e7d32;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        right: 15px;
+        height: 3px;
+        background: #a5d6a7; 
+        z-index: 0;
+    }
+
+    .step {
+        background: #a5d6a7; 
+        color: #fff;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        font-weight: bold;
+        transition: 0.3s;
+
+        &.active,
+        &.start {
+            background: #2e7d32; 
+        }
+    }
+}
+
+form {
+    .form-step {
+        display: none; 
+
+        &.active {
+            display: block; 
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        h3 {
+            text-align: center;
+            color: #1b5e20; 
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 0.8rem;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.6rem;
+            margin-top: 0.3rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+
+            &:focus {
+                border-color: #2e7d32; 
+            }
+        }
+
+        .interests-options {
+            margin-top: 1rem;
+
+            .interest-option {
+                margin-bottom: 0.5rem;
+
+                label {
+                    margin-left: 0.4rem;
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+
+            button {
+                background: #2e7d32; 
+                color: white;
+                border: none;
+                padding: 0.6rem 1.2rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: #1b5e20; 
+                }
+
+                &.prev {
+                    background: #81c784;
+
+                    &:hover {
+                        background: #66bb6a;
+                    }
+                }
+            }
+        }
+
+        .terms-link {
+            color: #2e7d32;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
