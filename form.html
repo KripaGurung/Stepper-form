@@ -69,6 +69,7 @@
                     <h3>Preferences</h3>
 
                     <label>Select your interests:</label>
+
                     <div class="interests-options">
 
                         <div class="interest-option">
@@ -112,19 +113,29 @@
 
                 </div>
 
-                <div class="form-step">
-
-                    <h3>Confirm & Submit</h3>
-
-                    <input type="checkbox" id="terms">
-                    <label for="terms">I agree to the</label>
-                    <a href="#" class="terms-link">terms and conditions</a>
-                    
-                    <div class="buttons">
-                        <button type="button" class="prev">Previous</button>
-                        <button type="submit">Create Account</button>
+            <div class="form-step">
+                <h3>Confirm & Submit</h3>
+            
+                <div class="terms-box">
+                    <p class="terms-text">
+                        By creating an account, you agree to comply with our community guidelines and data privacy policy.
+                        Please read all terms carefully before proceeding.
+                    </p>
+            
+                    <div class="terms-container">
+                        <input type="checkbox" id="terms" />
+                        <label for="terms">
+                            I agree to the <a href="#" class="terms-link">terms and conditions</a>
+                        </label>
                     </div>
                 </div>
+            
+                <div class="buttons">
+                    <button type="button" class="prev">Previous</button>
+                    <button type="submit">Create Account</button>
+                </div>
+            </div>
+
             </form>
         </div>
     </div>
