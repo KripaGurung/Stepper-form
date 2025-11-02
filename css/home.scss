@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: "Poppins", sans-serif;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #e8e3df;
+    border-radius: 15px;
+    padding: 0.8rem 2rem;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #000;
+    }
+
+    .nav-icons {
+        display: flex;
+        gap: 1rem;
+
+        a {
+            background: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #444;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: #2e7d32;
+                transform: scale(1.05);
+                box-shadow: 0 0 6px rgba(46, 125, 50, 0.2);
+            }
+        }
+    }
+}
+
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem; 
+    gap: 1rem; 
+    flex-wrap: wrap;
+
+    .hero-text {
+        flex: 1;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .explore-btn {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background-color: #256628; 
+            }
+        }
+    }
+
+    .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            width: 85%;
+            max-width: 460px;
+            border-radius: 10px;
+            margin-left: 3rem; 
+            margin-top: -60px
+        }
+    }
+}

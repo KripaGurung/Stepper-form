@@ -148,7 +148,7 @@ registerForm.addEventListener("submit", (e) => {
     registerForm.reset();
 
     alert("Account created successfully!");
-    window.location.href = "login.html";
+    window.location.href = "./login.html";
 });
 
 
