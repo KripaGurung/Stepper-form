@@ -1,5 +1,18 @@
 const registerForm = document.getElementById("register-form");
 
+let nextButtons = document.querySelectorAll(".next");
+let prevButtons = document.querySelectorAll(".prev");
+let steps = document.querySelectorAll(".form-step");
+let progress = document.querySelectorAll(".step");
+
+// Load saved step from localStorage
+let currentStep = parseInt(localStorage.getItem("currentStep")) || 0;
+
+
+showStep();
+updateProgress();
+
+// Load saved form data
 window.addEventListener("load", () => {
     const savedData = JSON.parse(localStorage.getItem("tempFormData"));
     if (savedData) {
@@ -52,7 +65,39 @@ function getCurrentFormData() {
     return data;
 }
 
-// Form submit
+for (let i = 0; i < nextButtons.length; i++) {
+    nextButtons[i].addEventListener("click", function () {
+        if (!validateStep(currentStep)) return;
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep();
+            updateProgress();
+
+            localStorage.setItem("currentStep", currentStep);
+        }
+    });
+}
+
+for (let i = 0; i < prevButtons.length; i++) {
+    prevButtons[i].addEventListener("click", function () {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep();
+            updateProgress();
+
+            localStorage.setItem("currentStep", currentStep);
+        }
+    });
+}
+
+function showStep() {
+    steps.forEach((step, i) => step.classList.toggle("active", i === currentStep));
+}
+
+function updateProgress() {
+    progress.forEach((p, i) => p.classList.toggle("active", i <= currentStep));
+}
+
 registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -70,12 +115,7 @@ registerForm.addEventListener("submit", (e) => {
 
     const termsChecked = document.getElementById("terms").checked;
 
-    //check if password is match or not
-    if (password !== confirmPassword) {
-        alert("Password not match!");
-        return;
-    }
-
+    // check if terms and conditions are agreed or not
     if (!termsChecked) {
         alert("Please agree with terms and conditions before you register!");
         return;
@@ -101,48 +141,18 @@ registerForm.addEventListener("submit", (e) => {
     });
 
     localStorage.setItem("users", JSON.stringify(users));
-    localStorage.removeItem("tempFormData"); 
+
+    localStorage.removeItem("tempFormData");
+    localStorage.removeItem("currentStep");
+
+    registerForm.reset();
 
     alert("Account created successfully!");
     window.location.href = "login.html";
 });
 
-let nextButtons = document.querySelectorAll(".next");
-let prevButtons = document.querySelectorAll(".prev");
-let steps = document.querySelectorAll(".form-step");
-let progress = document.querySelectorAll(".step");
-let currentStep = 0;
 
-for (let i = 0; i < nextButtons.length; i++) {
-    nextButtons[i].addEventListener("click", function () {
-        if (!validateStep(currentStep)) return; // stop moving if invalid
-        if (currentStep < steps.length - 1) {
-            currentStep++;
-            showStep();
-            updateProgress();
-        }
-    });
-}
-
-for (let i = 0; i < prevButtons.length; i++) {
-    prevButtons[i].addEventListener("click", function () {
-        if (currentStep > 0) {
-            currentStep--;
-            showStep();
-            updateProgress();
-        }
-    });
-}
-
-function showStep() {
-    steps.forEach((step, i) => step.classList.toggle("active", i === currentStep));
-}
-
-function updateProgress() {
-    progress.forEach((p, i) => p.classList.toggle("active", i <= currentStep));
-}
-
-//Validation per step
+// Validation step
 function validateStep(stepIndex) {
     if (stepIndex === 0) {
         const fullName = document.getElementById("fullName").value.trim();
@@ -166,26 +176,31 @@ function validateStep(stepIndex) {
             alert("Password must be at least 6 characters long.");
             return false;
         }
+        
+        // check if password match or not
+        if (password !== confirmPassword) {
+        alert("Password not match!");
+        return;
+    }
     }
 
     if (stepIndex === 1) {
-    const username = document.getElementById("username").value.trim();
-    const country = document.getElementById("country").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    
-    const pattern = /^[0-9]{10}$/; // exactly 10 digits
+        const username = document.getElementById("username").value.trim();
+        const country = document.getElementById("country").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        
+        const pattern = /^[0-9]{10}$/;
 
-    if (!username || !country) {
-        alert("Please fill all required fields in Personal Details.");
-        return false;
+        if (!username || !country) {
+            alert("Please fill all required fields in Personal Details.");
+            return false;
+        }
+
+        if (!pattern.test(phone)) {
+            alert("Please enter a valid 10-digit phone number.");
+            return false;
+        }
     }
-
-    if (!pattern.test(phone)) {
-        alert("Please enter a valid 10-digit phone number.");
-        return false;
-    }
-}
-
 
     if (stepIndex === 2) {
         const interests = document.querySelectorAll('input[name="interests"]:checked');

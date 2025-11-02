@@ -158,7 +158,7 @@ form .form-step select:focus {
   background: #1b5e20;
 }
 .buttons button.prev {
-  background: #81c784;
+  background: #2e7d32;
 }
 .buttons button.prev:hover {
   background: #66bb6a;
@@ -203,7 +203,4 @@ form .form-step select:focus {
   color: #2e7d32;
   text-decoration: none;
   font-weight: 500;
-}
-.terms-box .terms-container label .terms-link:hover {
-  text-decoration: underline;
 }/*# sourceMappingURL=form.css.map */

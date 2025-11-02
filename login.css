@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #e3fde7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-container {
+  background: #ffffff;
+  width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+.main-container h1 {
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+.main-container form .form-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.main-container form .form-container label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #333;
+}
+.main-container form .form-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+.main-container form .form-container input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
+}
+.main-container form .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 14px;
+}
+.main-container form .remember-forgot a {
+  color: #2e7d32;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.main-container form .remember-forgot a:hover {
+  color: #1b5e20;
+  text-decoration: underline;
+}
+.main-container form .remember-forgot input {
+  margin-right: 5px;
+}
+.main-container form .buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-direction: column;
+}
+.main-container form .buttons button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.main-container form .buttons button:hover {
+  background: #1b5e20;
+}
+.main-container form .register-link {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+.main-container form .register-link a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+.main-container form .register-link a:hover {
+  text-decoration: underline;
+  color: #1b5e20;
+}/*# sourceMappingURL=login.css.map */
